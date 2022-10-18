@@ -21,8 +21,8 @@ jobs:
     - name: Build the Docker image
       env:
         tag: ${{ github.sha }}
-      run: docker build . --file Dockerfile --tag richard1ybb/appium:$tag
+      run: docker build . --file Dockerfile --tag appium:$tag
     - name: Push the Docker image
       env:
         tag: ${{ github.sha }}
-      run: docker push richard1ybb/appium:$tag
+      run: docker push appium:$tag
