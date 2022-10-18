@@ -21,7 +21,7 @@ jobs:
     - name: Login the Docker image
       env:
         tag: ${{ github.sha }}
-      run: docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} docker.io
+      run: docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
     - name: Push the Docker image
       env:
         tag: ${{ github.sha }}
