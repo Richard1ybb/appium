@@ -37,10 +37,14 @@ if [[ -z $ip ]]; then
   pkill node
 fi
 
-export WDA_HOST="${ip//\//}"
+ios forward ${WDA_PORT} ${WDA_PORT}
+ios forward ${MJPEG_PORT} ${MJPEG_PORT}
+
+#export WDA_HOST="${ip//\//}"
+export WDA_HOST="device-${STF_PROVIDER_DEVICE_NAME}-${DEVICE_UDID}-appium"
 echo "Detected WDA_HOST ip: ${WDA_HOST}"
 echo "WDA_PORT=${WDA_PORT}"
-
+echo "MJPEG_PORT=${MJPEG_PORT}"
 
 # #247: right after the WDA startup it should load SNAPSHOT of com.apple.springboard default screen and default timeout is 60 sec for 1st start.
 # We have to start this session at once and till next restart WDA sessions might be stopped/started asap.
