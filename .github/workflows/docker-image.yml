@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       env:
         tag: ${{ github.sha }}
-      run: docker build . --file Dockerfile --tag richard1ybb1/appium-stf:$tag
+      run: docker build . --file Dockerfile --tag richard1ybb/appium:$tag
     - name: Login the Docker image
       env:
         tag: ${{ github.sha }}
@@ -25,4 +25,4 @@ jobs:
     - name: Push the Docker image
       env:
         tag: ${{ github.sha }}
-      run: docker push richard1ybb1/appium-stf:$tag
+      run: docker push richard1ybb/appium:$tag
