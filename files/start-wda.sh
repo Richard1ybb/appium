@@ -41,7 +41,7 @@ ios forward ${WDA_PORT} ${WDA_PORT} &
 ios forward ${MJPEG_PORT} ${MJPEG_PORT} &
 
 #export WDA_HOST="${ip//\//}"
-export WDA_HOST="device-${STF_PROVIDER_DEVICE_NAME}-${DEVICE_UDID}-appium"
+export WDA_HOST=`hostname`
 echo "Detected WDA_HOST ip: ${WDA_HOST}"
 echo "WDA_PORT=${WDA_PORT}"
 echo "MJPEG_PORT=${MJPEG_PORT}"
