@@ -37,8 +37,8 @@ if [[ -z $ip ]]; then
   pkill node
 fi
 
-ios forward ${WDA_PORT} ${WDA_PORT}
-ios forward ${MJPEG_PORT} ${MJPEG_PORT}
+ios forward ${WDA_PORT} ${WDA_PORT} &
+ios forward ${MJPEG_PORT} ${MJPEG_PORT} &
 
 #export WDA_HOST="${ip//\//}"
 export WDA_HOST="device-${STF_PROVIDER_DEVICE_NAME}-${DEVICE_UDID}-appium"
